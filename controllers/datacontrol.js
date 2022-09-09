@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId } from "mongodb";
+import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
 import fs from "fs"
 const uri = "mongodb+srv://vbp:spacerockApp1@spacerock-db.zvbvmp3.mongodb.net/spacerock?retryWrites=true&w=majority" || process.env.MONGODB_URI ;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
