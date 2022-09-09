@@ -13,7 +13,7 @@ import { readMore, renderFormDetails } from "./renderDetails.js"
 export function getDatasCard() {
   let searchWord = input.searchField.value.toLowerCase()
 
-  fetch(`http://localhost:8080/data?word=${searchWord}&analogue=${input.searchAnalogue.checked}&simulant=${input.searchSimulant.checked}&approved=${input.searchApproved.checked}&pending=${input.searchPending.checked}&all=${input.allData.checked}&getlength=true`
+  fetch(`https://spacerock.onrender.com/data?word=${searchWord}&analogue=${input.searchAnalogue.checked}&simulant=${input.searchSimulant.checked}&approved=${input.searchApproved.checked}&pending=${input.searchPending.checked}&all=${input.allData.checked}&getlength=true`
   )
     .then(res => res.json())
     .then(dataLength => {
@@ -25,7 +25,7 @@ export function getDatasCard() {
       loadPaginationNav(dataLength, dom.paginationContent, 5)
 
       let pageIndex = 0;
-      fetch(`http://localhost:8080/data?word=${searchWord}&analogue=${input.searchAnalogue.checked}&simulant=${input.searchSimulant.checked}&approved=${input.searchApproved.checked}&pending=${input.searchPending.checked}&all=${input.allData.checked}&page=${pageIndex}`
+      fetch(`https://spacerock.onrender.com/data?word=${searchWord}&analogue=${input.searchAnalogue.checked}&simulant=${input.searchSimulant.checked}&approved=${input.searchApproved.checked}&pending=${input.searchPending.checked}&all=${input.allData.checked}&page=${pageIndex}`
       ).then(res => res.json())
         .then(data => {
           dom.cardsWrapper.innerHTML = render(data, renderCard)
@@ -45,7 +45,7 @@ export function getDatasCard() {
           onePage.classList.add("bg-white")
 
           pageIndex = onePage.innerText - 1
-          fetch(`http://localhost:8080/data?word=${searchWord}&analogue=${input.searchAnalogue.checked}&simulant=${input.searchSimulant.checked}&approved=${input.searchApproved.checked}&pending=${input.searchPending.checked}&all=${input.allData.checked}&page=${pageIndex}`
+          fetch(`https://spacerock.onrender.com/data?word=${searchWord}&analogue=${input.searchAnalogue.checked}&simulant=${input.searchSimulant.checked}&approved=${input.searchApproved.checked}&pending=${input.searchPending.checked}&all=${input.allData.checked}&page=${pageIndex}`
           ).then(res => res.json())
             .then(data => {
               dom.cardsWrapper.innerHTML = render(data, renderCard)
