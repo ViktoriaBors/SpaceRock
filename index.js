@@ -1,5 +1,5 @@
 import express from "express";
-import { MongoClient } from "mongodb";
+import { MongoClient, ServerApiVersion  } from "mongodb";
 import datarouter from "./routes/dataRoutes.js"
 import userrouter from "./routes/userRoutes.js"
 import cookieParser from "cookie-parser";
@@ -7,11 +7,12 @@ import fs from "fs"
 import bcrypt from "bcrypt"
 import multer from "multer"
 
-const client = new MongoClient("mongodb://localhost:27017");
+const uri = "mongodb+srv://vbp:spacerockApp1@spacerock-db.zvbvmp3.mongodb.net/spacerock?retryWrites=true&w=majority" || process.env.MONGODB_URI ;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 let db
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.static("public"))
 app.use(express.static("views", {
@@ -31,7 +32,7 @@ app.use("/data",datarouter)
 app.use("/user", userrouter)
 
 client.connect().then(()=>{
-  db = client.db("spacerockproject");
+  db = client.db("spacerock");
   app.listen(port,()=>{
     console.log(`App listening on port ${port}`)})
   }).catch(err=>console.log(err))
