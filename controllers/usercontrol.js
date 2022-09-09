@@ -1,15 +1,16 @@
 // user_post - new user registration
 // user_details - login
 // user_index check user has a session or not
-
-import { MongoClient, MongoNotConnectedError, ObjectId } from "mongodb";
 import { v4 as uuid4 } from "uuid";
 import bcrypt from "bcrypt"
 
+import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
+import fs from "fs"
+const uri = "mongodb+srv://vbp:spacerockApp1@spacerock-db.zvbvmp3.mongodb.net/spacerock?retryWrites=true&w=majority" || process.env.MONGODB_URI ;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const database = client.db("spacerock").collection("users")
+const session = client.db("spacerock").collection("session")
 
-const client = new MongoClient("mongodb://localhost:27017");
-const database = client.db("spacerockproject").collection("users")
-const session = client.db("spacerockproject").collection("session")
 
 const user_post = async (req,res)=>{
   console.log("new user")
