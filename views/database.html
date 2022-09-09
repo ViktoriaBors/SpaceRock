@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceRock</title>
+  <!--Tailwind Css and Elements-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="h-screen font-serif relative bg-cover opacity-90"
+  style="background-image: url(../img/pexels-kai-pilger-1341279-2.jpg);">
+  <span class="fixed bottom-0 right-0 text-2xl fa-rotate-270 cursor-pointer text-yellow-600"> <a
+      href="#">&#10140</a></span>
+  <!--NAVBAR-->
+  <nav class="
+sticky-top
+w-full
+flex flex-wrap
+items-center
+justify-between
+py-4
+bg-slate-400
+hover:text-yellow-700
+focus:text-yellow-800
+shadow-lg
+navbar navbar-expand-sm
+text-lg 
+">
+    <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+      <button class="
+    navbar-toggler
+    text-black
+    border-0
+    hover:shadow-none hover:no-underline
+    py-2
+    px-2.5
+    bg-transparent
+    focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+  " type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+        aria-label="Navigation">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor"
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+          </path>
+        </svg>
+      </button>
+      <a class="font-extrabold tracking-wider text-yellow-800 cursor-pointer hover:text-yellow-700 "
+        href="index">SpaceRock</a>
+      <div class="collapse navbar-collapse flex-grow items-end justify-end" id="navbar">
+        <!-- Left links -->
+        <ul class="navbar-nav flex flex-col pl-2 list-style-none text-black">
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              aria-current="page" href="samples">Sample Types</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="research">Research Facility</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="#">Database Center</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero bg-gray-700">
+    <div class="relative overflow-hidden bg-no-repeat bg-cover sm:rounded-bl-full h-96 w-full" style="background-position: 50%; background-image: url('../img/pexels-manuel-geissinger-9101887-2.jpg');
+    height: 400px;">>
+      <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+        style="background-color: rgba(255, 255, 255, 0.1);"></div>
+    </div>
+    </div>
+    <h1 class="text-center text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-yellow-600 py-4">Research
+      Facility and Database Center for Lunar materials</h1>
+  </section>
+
+  <main class="text-justify ">
+    <div class="container mx-auto px-6 py-4 bg-slate-200">
+      <p class="pt-2 text-lg text-center font-bold py-4">Database Center</p>
+      <div class="text-justify p-2">
+        <p>Here you can freely search in our database, including analogue samples, simulants both approved or pending materials.</p>
+      </div>
+      <form action="GET" class="border-b border-slate-600">
+        <!--search-bar-->
+        <div class="flex justify-center mt-4">
+          <div class="w-full md:w-2/4">
+            <div class="input-group relative flex flex-wrap items-stretch w-full mb-2">
+              <input type="text" id="searchField" name="searchDB"
+                class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700"
+                placeholder="Search" aria-label="Search" aria-describedby="searchBtn">
+              <button id="searchBtn"
+                class="btn inline-block px-6 py-2 border-2 border-gray-400 bg-yellow-500 text-black font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg active:bg-yellow-700 active:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                type="button">Search</button>
+            </div>
+          </div>
+        </div>
+        <!--radio button-->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 text-center">
+          <div class="p-2">
+            <input type="radio" id="analogue" name="sampleType" value="analogue" class="hidden peer sr-only">
+            <label for="analogue"
+              class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Analogues</label>
+          </div>
+          <div class="p-2">
+            <input type="radio" id="simulant" name="sampleType" value="simulant" class="hidden peer sr-only">
+            <label for="simulant"
+              class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Simulants</label>
+          </div>
+          <!--radio button-->
+          <div class="p-2">
+            <input type="radio" id="approved" name="sampleStatus" value="approved" class="hidden peer sr-only">
+            <label for="approved"
+              class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Approved</label>
+          </div>
+          <div class="p-2">
+            <input type="radio" id="pending" name="sampleStatus" value="pending" class="hidden peer sr-only">
+            <label for="pending"
+              class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Pending</label>
+          </div>
+          <div class="p-2 flex justify-around">
+            <input type="checkbox" id="allData" name="allData" value="allData" class="hidden peer sr-only">
+            <label for="allData"
+              class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">All</label>
+          </div>
+          <div class="p-2">
+            <button id="resetBtn" type="button"
+              class="cursor-pointer active:bg-yellow-600 active:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Reset</button>
+          </div>
+        </div>
+      </form>
+
+      <!--Here comes from server side data-->
+      <div id="cardsWrapper" class=" sm:grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+      </div>
+      <!--cardsWrapper end-->
+
+      <!--Pagination-->
+      <div class="flex justify-center items-center">
+        <nav aria-label="Page navigation to see more samples" id="paginationNav">
+          <ul class="flex list-style-none" id="paginationContent">
+
+          </ul>
+
+        </nav>
+      </div>
+
+      <!--Main container wrapper-->
+    </div>
+
+    <!--test modal - until lg-size-->
+    <div id="modalSearch">
+      <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        id="oneModalData" tabindex="-1" aria-labelledby="oneModalData" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable relative w-auto pointer-events-none">
+          <div
+            class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div
+              class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+              <h5 class="modalSampleName text-xl font-medium leading-normal text-gray-800" id="oneModalData">
+
+              </h5>
+              <h5 class="modalSampleStatus text-md font-bold uppercase">
+
+              </h5>
+            </div>
+            <div class="modal-body relative p-4">
+              <img class="modalImg rounded-t-lg pb-2" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                alt="" />
+              <p class="text-md font-bold py-1">Short description</p>
+              <p class="modalDescription text-sm pb-2"></p>
+              <p class="text-md font-bold py-1">Mineral Composition</p>
+              <p class="modalMineral text-sm pb-2"></p>
+              <p class="text-md font-bold py-1">Geochemical Composition</p>
+              <table class="text-sm text-center border-collapse border border-indigo-600">
+                <thead>
+                  <tr>
+                    <th class="px-4 py-2">Element</th>
+                    <th class="px-4 py-2">Wt%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 border border-indigo-600">SiO<sub>2</sub></td>
+                    <td class="modalSiO py-2 border border-indigo-600"></td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 border border-indigo-600">Al<sub>2</sub>O<sub>3</sub></td>
+                    <td class="modalAlO py-2 border border-indigo-600"></td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 border border-indigo-600">MgO</td>
+                    <td class="modalMgO py-2 border border-indigo-600"></td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 border border-indigo-600">CaO</td>
+                    <td class="modalCaO py-2 border border-indigo-600"></td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 border border-indigo-600">Na<sub>2</sub>O</td>
+                    <td class="modalNaO py-2 border border-indigo-600"></td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 border border-indigo-600">Fe<sub>2</sub>O<sub>3</sub></td>
+                    <td class="modalFeO py-2 border border-indigo-600"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="text-md font-bold py-1">Density (kg/m<sup>3</sup>)</p>
+              <p class="modalDensity text-sm pb-2"></p>
+              <p class="text-md font-bold py-1">Porosity (%)</p>
+              <p class="modalPorosity text-sm pb-2"></p>
+
+            </div>
+            <div
+              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+              <butt type="button"
+                class="cursor-pointer inline-block px-6 py-2.5 bg-indigo-200 text-gray-700 font-bold text-xs leading-tight rounded shadow-md hover:bg-indigo-300 hover:shadow-lg active:bg-indigo-400 active:shadow-lg"
+                data-bs-dismiss="modal">
+                Close
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer class="text-white bg-zinc-600">
+    <div class="bg-zinc-600 container mx-auto px-6 py-4 text-center lg:flex flex-row justify-between">
+      <p>SpaceRock is a Research Facility and Database Center for Lunar Materials</p>
+      <div class="mt-4 lg:flex flex-row">
+        <p class="mr-5">Follow us</p>
+        <i class="fa fa-linkedin cursor-pointer mr-2 pt-1"></i>
+        <i class="fa fa-facebook cursor-pointer mr-2 pt-1"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script/scriptDB.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

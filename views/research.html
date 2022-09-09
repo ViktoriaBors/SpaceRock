@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceRock</title>
+  <!--Tailwind Css and Elements-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="h-screen font-serif relative bg-cover opacity-90"
+  style="background-image: url(../img/pexels-kai-pilger-1341279-2.jpg);">
+  <span class="fixed bottom-0 right-0 text-2xl fa-rotate-270 cursor-pointer text-yellow-600"> <a
+      href="#">&#10140</a></span>
+  <!--NAVBAR-->
+  <nav class="
+sticky-top
+w-full
+flex flex-wrap
+items-center
+justify-between
+py-4
+bg-slate-400
+hover:text-yellow-700
+focus:text-yellow-800
+shadow-lg
+navbar navbar-expand-sm
+text-lg 
+">
+    <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+      <button class="
+    navbar-toggler
+    text-black
+    border-0
+    hover:shadow-none hover:no-underline
+    py-2
+    px-2.5
+    bg-transparent
+    focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+  " type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+        aria-label="Navigation">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor"
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+          </path>
+        </svg>
+      </button>
+      <a class="font-extrabold tracking-wider text-yellow-800 cursor-pointer hover:text-yellow-700 "
+        href="index">SpaceRock</a>
+      <div class="collapse navbar-collapse flex-grow items-end justify-end" id="navbar">
+        <!-- Left links -->
+        <ul class="navbar-nav flex flex-col pl-2 list-style-none text-black">
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              aria-current="page" href="samples">Sample Types</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="#">Research Facility</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="database">Database Center</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero bg-gray-700">
+    <div class="relative overflow-hidden bg-no-repeat bg-cover sm:rounded-bl-full h-96 w-full" style="background-position: 50%; background-image: url('../img/labeq.jpg');
+    height: 400px;">>
+      <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+        style="background-color: rgba(255, 255, 255, 0.2);"></div>
+    </div>
+    </div>
+    <h1 class="text-center text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-yellow-600 py-4">Research
+      Facility and Database Center for Lunar materials</h1>
+  </section>
+
+  <main class="text-justify ">
+    <div class="container mx-auto px-6 py-4 bg-slate-200">
+      <p class="pt-2 text-lg text-center font-bold py-4">The Research Facility and its services</p>
+      <div class="text-justify p-2">
+        <img class="mx-auto md:float-right h-64 p-3 pr-0" src="../img/sem-2.jpg" alt="">
+        <p>The research facility is fully equipped with instruments, which are necessary for sample characterization.
+        </p>
+        <p>The laboratory main focus is to determine the geochemical and mineral composition of the analogue samples and
+          simulants. We also have a numerous sample preparation equipment for example rock crusher, saw, miller etc.</p>
+        <p class="pt-2">Our laboratory park includes the following instruments:</p>
+        <ul class="list-disc">
+          <li class="ml-5">Polarized Light Microscope (PLM).</li>
+          <li class="ml-5">X-ray Powder Diffraction (XRD).</li>
+          <li class="ml-5">X-ray Fluorescence Spectrometer (XRF).</li>
+          <li class="ml-5">Fourier -transform Infrared Spectroscope (FTIR).</li>
+          <li class="ml-5">Raman Spectroscope.</li>
+          <li class="ml-5">Scanning Electron Microscope (SEM-EDS).</li>
+        </ul>
+        <p class="py-2">Please NOTE that our services are not available for commercial use. We characterize only the
+          in-house samples and samples which is waiting to be approved.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-white bg-zinc-600">
+    <div class="bg-zinc-600 container mx-auto px-6 py-4 text-center lg:flex flex-row justify-between">
+      <p>SpaceRock is a Research Facility and Database Center for Lunar Materials</p>
+      <div class="mt-4 lg:flex flex-row">
+        <p class="mr-5">Follow us</p>
+        <i class="fa fa-linkedin cursor-pointer mr-2 pt-1"></i>
+        <i class="fa fa-facebook cursor-pointer mr-2 pt-1"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

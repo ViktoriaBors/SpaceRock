@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceRock</title>
+  <!--Tailwind Css and Elements-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="h-screen font-serif relative bg-cover opacity-90"
+  style="background-image: url(../img/pexels-kai-pilger-1341279-2.jpg);">
+  <span class="fixed bottom-0 right-0 text-2xl fa-rotate-270 cursor-pointer text-yellow-600"> <a
+      href="#">&#10140</a></span>
+  <!--NAVBAR-->
+  <nav class="
+sticky-top
+w-full
+flex flex-wrap
+items-center
+justify-between
+py-4
+bg-slate-400
+hover:text-yellow-700
+focus:text-yellow-800
+shadow-lg
+navbar navbar-expand-sm
+text-lg
+">
+    <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+      <button class="
+    navbar-toggler
+    text-black
+    border-0
+    hover:shadow-none hover:no-underline
+    py-2
+    px-2.5
+    bg-transparent
+    focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+  " type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+        aria-label="Navigation">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor"
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+          </path>
+        </svg>
+      </button>
+      <a class="font-extrabold tracking-wider text-yellow-800 cursor-pointer hover:text-yellow-700 "
+        href="index">SpaceRock</a>
+      <div class="collapse navbar-collapse flex-grow items-end justify-end" id="navbar">
+        <!-- Left links -->
+        <ul class="navbar-nav flex flex-col pl-2 list-style-none text-black">
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              aria-current="page" href="#">Sample Types</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="research">Research Facility</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="database">Database Center</a>
+          </li>
+          <li class="nav-item p-1">
+            <a class="nav-link hover:text-yellow-700 hover:underline underline-offset-2 decoration-2 decoration-yellow-700 focus:text-yellow-800"
+              href="contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero bg-gray-700">
+    <div class="relative overflow-hidden h-72 bg-no-repeat bg-contain sm:rounded-bl-full lg:rounded-tr-full">
+      <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-72 overflow-hidden bg-fixed"
+        style="background-color: rgba(255, 255, 255, 0.2);">
+        <div class="carousel slide carousel-fade relative" data-bs-ride="carousel">
+          <div class="carousel-inner relative w-full h-full overflow-hidden">
+            <div class="carousel-item active relative float-left w-full h-full">
+              <img src="../img/pexels-daria-shevtsova-1884303-2.jpg" class="block w-full h-full md:h-auto" alt="" />
+            </div>
+            <div class="carousel-item relative float-left w-full h-full">
+              <img src="../img/32961434870_34be06054a_o2-2.jpg" class="block w-full h-full md:h-auto" alt="" />
+            </div>
+            <div class="carousel-item relative float-left w-full h-full">
+              <img src="../img/pexels-plato-terentev-9817495-2.jpg" class="block w-full h-full md:h-auto" alt="" />
+            </div>
+            <div class="carousel-item relative float-left w-full h-full">
+              <img src="../img/4002268001_88c7a15b92_o-2.jpg" class="block w-full h-full md:h-auto" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-yellow-600 py-4">Research
+      Facility and Database Center for Lunar materials</h1>
+  </section>
+
+  <main class="text-justify">
+    <div class="container mx-auto px-6 py-4 bg-slate-200 ">
+      <p class="pt-2 text-lg text-center font-bold py-4">Analogue and simulant samples</p>
+      <div class="flex flex-col md:flex-row justify-around items-center flex-auto">
+        <div class="p-4 text-justify basis-2/4 border-b-2 border-gray-700 md:border-r-2 md:border-b-0">
+          <p class="text-center text-lg pb-2">Analogue Samples</p>
+          <p>Analogues are representative of a large area of a target body without having well defined parameters.
+            Good example is a basalt in our collection. The basalt is representative of the basalts present on
+            the Moon. </p>
+          <p>Many of the field sites are termed as ‘analogue sites’, because they can be used to conduct field
+            test in regard to the Moon (for example, rover field trials).</p>
+        </div>
+        <div class="p-4 text-justify basis-2/4 border-b-2 border-gray-700 md:border-none">
+          <p class="text-center text-lg pb-2">Simulants</p>
+          <p>Simulants are representative of a specific planetary body and lithology, with properties that
+            more closely match those of the parent body. For example, a lunar mare regolith simulant would
+            have a grain size distribution and grain shape similar to lunar regolith returned from the Moon
+            during the Apollo missions. </p>
+          <p>Simulants can be ‘general use’ as previously described, or be more specific and aim to represent
+            a particular sample or localized region on the Moon surface.</p>
+        </div>
+      </div>
+      <div class="my-2 text-justify p-4">
+        <p class="pt-2 text-lg text-center font-bold py-4">Borrowing materials</p>
+        <p>Borrowing both analogues and simulants is possible if you contact us. As they are loans, the material needs
+          to be returned to the collection once the research is finished.</p>
+        <p> For small-scale test, it is easily possible to provide the materials. For large-scale test, it might be not
+          possible to provide enough material. </p>
+        <p class="py-2">Please note as well that some of our samples are ‘voucher specimens’. That means we have a
+          really small amount for in-house test.</p>
+        <p>There can be several reasons for a particular sample cannot be loaned:</p>
+        <ul class="list-disc">
+          <li class="ml-5">It is already on loan.</li>
+          <li class="ml-5">It has some health and safety concerns</li>
+          <li class="ml-5">We are concerned that the sample may be altered or lost during the delivery and loan period.
+          </li>
+          <li class="ml-5">The reason requesting the sample is not justifiable base on the scientific application.</li>
+        </ul>
+      </div class="my-2 text-justify p-4">
+      <p class="pt-2 text-lg text-center font-bold py-4">Approving procedure</p>
+      <p>Please NOTE it is possible to get your simulants approved. It takes the following steps:</p>
+      <ul class="list-disc">
+        <li class="ml-5">Contact us via mail with the details about the material.</li>
+        <li class="ml-5">Register on our website under <a href="contact.html"
+            class="uppercase font-semibold">contact</a>.</li>
+        <li class="ml-5">After login, you can add, modify and delete your samples. Some parameters of the sample are
+          required (for example a name, short description and mineral composition).</li>
+        <li class="ml-5">Meanwhile please send us a small amount of the sample for further characterization and research
+          in-house at SpaceRock.</li>
+        <li class="ml-5">After all the in-house laboratory analysis checks out (and matches with your results), the
+          status of the sample changes from pending to approved.</li>
+      </ul>
+      <p class="py-2">These procedure ensure that the composition of the sample are well-described and follows all
+        standards.</p>
+      <div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-zinc-600 text-white">
+    <div class="bg-zinc-600 container mx-auto px-6 py-4 text-center lg:flex flex-row justify-between">
+      <p>SpaceRock is a Research Facility and Database Center for Lunar Materials</p>
+      <div class="mt-4 lg:flex flex-row">
+        <p class="mr-5">Follow us</p>
+        <i class="fa fa-linkedin cursor-pointer mr-2 pt-1"></i>
+        <i class="fa fa-facebook cursor-pointer mr-2 pt-1"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

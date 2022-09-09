@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceRock</title>
+    <!--Tailwind Css and Elements-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="h-screen font-serif relative bg-cover opacity-90"
+    style="background-image: url(../img/pexels-kai-pilger-1341279-2.jpg);">
+    <span class="fixed bottom-0 right-0 text-2xl fa-rotate-270 cursor-pointer text-yellow-600"> <a
+            href="#">&#10140</a></span>
+    <!--NAVBAR-->
+    <div class="
+        w-full
+        flex flex-wrap
+        items-center
+        justify-between
+        py-4
+        bg-slate-400
+        hover:text-yellow-700
+        focus:text-yellow-800
+        shadow-lg
+        navbar navbar-expand-sm
+        text-lg 
+        ">
+        <div class="container-fluid w-full flex flex-col items-center justify-center px-6">
+            <p class="font-extrabold tracking-wider text-yellow-800"> SpaceRock</p>
+            <p class="text-center text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-yellow-900 py-4">
+                Research Facility and Database Center for Lunar materials</p>
+            <p class="text-center text-yellow-800"> Welcome</p>
+            <p class="text-center text-yellow-800"> You are logged in as <span id="userWelcome"
+                    class=" text-md font-bold capitalize"></span> <br>
+                    <span id="userEmail" class="text-md font-bold"></span>
+            </p>
+            
+        </div>
+        <p class="pl-2"><button type="button" id="logout" class="cursor-pointer text-sm font-bold text-yellow-900">Log Out</href=></p>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero bg-gray-700 pb-4">
+        <div class="relative overflow-hidden bg-no-repeat bg-cover sm:rounded-bl-full h-96 w-full" style="background-position: 50%; background-image: url('../img/pexels-mike-b-383559.jpg');
+    height: 400px;">
+            <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                style="background-color: rgba(255, 255, 255, 0.2);"></div>
+        </div>
+    </section>
+
+    <main class="text-justify ">
+        <div class="container mx-auto px-6 py-4 bg-slate-200">
+            <p class="pt-2 text-lg text-center font-bold py-4">Here you can see your pending samples in the database.
+            </p>
+            <form action="GET" class="mb-4">
+                <!--search-bar-->
+                <div class="flex justify-center">
+                    <div class="w-full md:w-2/4">
+                        <div class="input-group relative flex flex-wrap items-stretch w-full mb-2">
+                            <input type="text" id="searchFieldUser"
+                                class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700"
+                                placeholder="Search" aria-label="Search" aria-describedby="searchSavedBtn">
+                            <button id="searchSavedBtn"
+                                class="btn inline-block px-6 py-2 border-2 border-gray-400 bg-yellow-500 text-black font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg active:bg-yellow-700 active:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                                type="button">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <!--sorting options-->
+                <div class="flex flex-row justify-center items-center">
+                    <div class="p-2">
+                        <input type="radio" id="alphabetical" name="sorting" value="alphabetical"
+                            class="hidden peer sr-only">
+                        <label for="alphabetical"
+                            class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Alphabetical</label>
+                    </div>
+                    <div class="p-2">
+                        <input type="radio" id="newest" name="sorting" value="newest" class="hidden peer sr-only">
+                        <label for="newest"
+                            class="cursor-pointer peer-checked:bg-yellow-600 checked:shadow-lg inline-block  px-5 py-2.5 bg-indigo-300 text-gray-700 font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-400 hover:shadow-lg">Newest
+                            first</label>
+                    </div>
+                </div>
+            </form>
+            <!--Already saved samples by user appears here - all forms-->
+            <div id="savedSamples" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
+
+            </div>
+
+
+            <!--Pagination-->
+            <div class="flex justify-center items-center">
+                <nav aria-label="Page navigation to see more samples" id="paginationNavUser">
+                    <ul class="flex list-style-none" id="paginationContentUser">
+                    </ul>
+                </nav>
+            </div>
+            <!--new material accordion-->
+            <div class="accordion" id="accordionNew">
+                <div class="accordion-item bg-gray-700 border border-gray-200">
+                    <h2 class="accordion-header mb-0" id="heading">
+                        <button class="accordion-button relative flex items-center w-full py-4 px-5 text-lg text-gray-800 text-left bg-white border-0 rounded-none transition focus:outline-none focus:text-black active:text-black
+                        " type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true"
+                            aria-controls="collapse">
+                            Add new samples to the database
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading"
+                        data-bs-parent="#accordionNew">
+                        <div class="accordion-body py-4 px-5 flex justify-center items-center">
+                            <!--new materials form-->
+                            <div class="block p-6 rounded-lg shadow-lg bg-white m-2 w-full  lg:w-1/2">
+                                <form id="submitNewMaterial">
+                                    <div class="form-group mb-1">
+                                        <label for="materialName"
+                                            class="form-label inline-block mb-2 text-gray-700">Name of
+                                            the material</label>
+                                        <input type="text" required
+                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none" id="materialNameNew"
+                                            aria-describedby="materialName" placeholder="Sample name">
+                                    </div>
+                                    <p class="requiredField mb-5 px-1 text-xs text-red-700">The field is required</p>
+                                    <div class="form-group mb-1">
+                                        <label for="description"
+                                            class="form-label inline-block mb-2 text-gray-700">Short Description</label>
+                                        <textarea required class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                            id="descriptionNew" rows="3" aria-describedby="description"
+                                            placeholder="Provide short description"></textarea>
+                                    </div>
+                                    <p class="requiredField mb-5 px-1 text-xs text-red-700">The field is required</p>
+                                    <div class="form-group mb-1">
+                                        <label for="minerals" class="form-label inline-block mb-2 text-gray-700">Mineral
+                                            composition</label>
+                                        <textarea required
+                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                            id="mineralsNew" aria-describedby="minerals"> </textarea>
+                                    </div>
+                                    <p class="requiredField mb-5 px-1 text-xs text-red-700">The field is required</p>
+                                    <p for="chemistry" class="form-label inline-block mb-2 text-gray-700">Geochemical
+                                        composition</p>
+                                    <div class="form-group mb-6">
+                                        <div class="flex flex-row justify-around items-center">
+                                            <label for="siO"
+                                                class="form-label inline-block mb-2 text-gray-700">SiO<sub>2</sub></label>
+                                            <input type="number"
+                                                class="form-control inline px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                                id="siONew" aria-describedby="siO">
+                                        </div>
+                                        <div class="flex flex-row justify-around items-center">
+                                            <label for="alO"
+                                                class="form-label inline-block mb-2 text-gray-700">Al<sub>2</sub>O<sub>3</sub></label>
+                                            <input type="number"
+                                                class="form-control inline px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                                id="alONew" aria-describedby="alO">
+                                        </div>
+                                        <div class="flex flex-row justify-around items-center">
+                                            <label for="mgO"
+                                                class="form-label inline-block mb-2 text-gray-700">MgO</label>
+                                            <input type="number"
+                                                class="form-control inline px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                                id="mgONew" aria-describedby="mgO">
+                                        </div>
+                                        <div class="flex flex-row justify-around items-center">
+                                            <label for="caO"
+                                                class="form-label inline-block mb-2 text-gray-700">CaO</label>
+                                            <input type="number"
+                                                class="form-control inline px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                                id="caONew" aria-describedby="caO">
+                                        </div>
+                                        <div class="flex flex-row justify-around items-center">
+                                            <label for="naO"
+                                                class="form-label inline-block mb-2 text-gray-700">Na<sub>2</sub>O</label>
+                                            <input type="number"
+                                                class="form-control inline px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                                id="naONew" aria-describedby="naO">
+                                        </div>
+                                        <div class="flex flex-row justify-around items-center">
+                                            <label for="feO"
+                                                class="form-label inline-block mb-2 text-gray-700">Fe<sub>2</sub>O<sub>3</sub></label>
+                                            <input type="number"
+                                                class="form-control inline px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                                id="feONew" aria-describedby="feO">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-6">
+                                        <label for="density" class="form-label inline-block mb-2 text-gray-700">Density
+                                            (kg/m<sub>3</sub>)</label>
+                                        <input type="text"
+                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                            id="densityNew" aria-describedby="density" placeholder="Density">
+                                    </div>
+                                    <div class="form-group mb-6">
+                                        <label for="porosity"
+                                            class="form-label inline-block mb-2 text-gray-700">Porosity
+                                            (%)</label>
+                                        <input type="number"
+                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"
+                                            id="porosityNew" aria-describedby="porosity" placeholder="Porosity">
+                                    </div>
+                                   <button id="submitNew" type="button"
+                                        class=" w-full inline-block px-6 py-2.5 bg-yellow-500 text-black font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg active:bg-yellow-700 active:shadow-lg">
+                                        Submit</button>
+                                </form>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!--Accordion to file upload--> 
+            <div class="accordion" id="accordionImg">
+                <div class="accordion-item bg-gray-700 border border-gray-200">
+                    <h2 class="accordion-header mb-0" id="heading">
+                        <button class="accordion-button relative flex items-center w-full py-4 px-5 text-lg text-gray-800 text-left bg-white border-0 rounded-none transition focus:outline-none focus:text-black active:text-black
+                                    " type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="true"
+                            aria-controls="collapse">
+                            Image upload
+                        </button>
+                    </h2>
+                    <div id="collapse" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionImg">
+                        <div class="accordion-body py-4 px-5 flex justify-center items-center">
+                            <div class="block p-6 rounded-lg shadow-lg bg-white m-2 w-full  lg:w-1/2">
+                            <form id="submitImgForm">
+                                <div class="form-group mb-5">
+                                    <label for="materialName"
+                                        class="form-label inline-block mb-2 text-gray-700">Name of
+                                        the material</label>
+                                    <input type="text" required
+                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded m-0
+                                        focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none" id="materialName"
+                                        aria-describedby="materialName" placeholder="Sample name">
+                                </div>
+                                <div class="form-group mb-6">
+                                    <label for="imgUpload" class="form-label inline-block mb-2 text-gray-700">Upload an image about
+                                        the sample</label>
+                                    <input id="imgUpload" accept="image/png, image/jpg, image/jpeg" required class="form-control
+                                               block
+                                               w-full
+                                               px-3
+                                               py-1.5
+                                               text-base
+                                               font-normal
+                                               text-gray-700
+                                               bg-white bg-clip-padding
+                                               border border-solid border-gray-300
+                                               rounded
+                                               transition
+                                               ease-in-out
+                                               m-0
+                                               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                        type="file" id="formFile">
+                                </div>
+                                <button id="submitImgBtn" type="button"
+                                        class=" w-full inline-block px-6 py-2.5 bg-yellow-500 text-black font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg active:bg-yellow-700 active:shadow-lg">
+                                        Submit</button>
+                                <p  id="requiredField" class="mt-5 px-1 text-xs text-red-700">All fields are required</p>
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </main>
+
+    <footer class="text-white bg-zinc-600">
+        <div class="bg-zinc-600 container mx-auto px-6 py-4 text-center lg:flex flex-row justify-between">
+            <p>SpaceRock is a Research Facility and Database Center for Lunar Materials</p>
+            <div class="mt-4 lg:flex flex-row">
+                <p class="mr-5">Follow us</p>
+                <i class="fa fa-linkedin cursor-pointer mr-2 pt-1"></i>
+                <i class="fa fa-facebook cursor-pointer mr-2 pt-1"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/scriptUser.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
