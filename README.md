@@ -1,5 +1,5 @@
 # SpaceRock - EXAM PROJECT
-## ProOktatas Full-stack Develpoer bootcamp - JAVASCRIPT MODULE
+## ProOktatas Full-stack Developer bootcamp - JAVASCRIPT MODULE
 
 ### **_Introduction_**
 During the 4 months Javascript module, I have learned the basics and more of vanilla Javascript. End of the course I feel I have a good understanting about this language and ready to develop more (Pppsstt it is going to be React).
@@ -28,4 +28,5 @@ This project was filled with challenges. I am not sure where I should even start
 3. Tailwind Css and Tailwind Elements
 
 ## Deployed: 2022. September.
-Hopefully it is going to be reached online too.
+https://spacerock.onrender.com/index
+
