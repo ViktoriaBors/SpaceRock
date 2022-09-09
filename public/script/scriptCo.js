@@ -23,7 +23,7 @@ dom.registerBtn.addEventListener("click", () => {
         removeWhiteSpaces(input.emailReg.value),
         removeWhiteSpaces(input.passwordReg.value)
     )
-    fetch(`http://localhost:8080/user/register`, {
+    fetch(`https://spacerock.onrender.com/user/register`, {
         method: `Post`,
         headers: {
             "content-type": "application/json",
@@ -43,7 +43,7 @@ dom.registerBtn.addEventListener("click", () => {
                 icon: "success",
             })
             setTimeout(() => {
-                window.open("http://localhost:8080/dashboard", "_self")
+                window.open("https://spacerock.onrender.com/dashboard", "_self")
             }, 2000)
         })
         .catch(error => {
@@ -69,7 +69,7 @@ dom.signBtn.addEventListener("click", function (event) {
         return
     }
 
-    fetch('http://localhost:8080/user/login', {
+    fetch('https://spacerock.onrender.com/user/login', {
         method: `Post`,
         headers: {
             "content-type": "application/json",
@@ -87,7 +87,7 @@ dom.signBtn.addEventListener("click", function (event) {
                 icon: "success",
             })
             setTimeout(() => {
-                window.open("http://localhost:8080/dashboard", "_self")
+                window.open("https://spacerock.onrender.com/dashboard", "_self")
             }, 2000)
         })
         .catch(error => {
