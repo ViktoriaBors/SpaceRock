@@ -64,7 +64,7 @@ export function getDatasForm() {
   let newest = input.newestBtn.checked
   let email = document.querySelector("#userEmail").innerText
 
-  fetch(`http://localhost:8080/data/modify?word=${searchWord}&alphabetic=${alphabetic}&newest=${newest}&email=${email}&getlength=true`)
+  fetch(`https://spacerock.onrender.com/data/modify?word=${searchWord}&alphabetic=${alphabetic}&newest=${newest}&email=${email}&getlength=true`)
     .then(res => res.json())
     .then(dataLength => {
       if (dataLength == 0) {
@@ -75,7 +75,7 @@ export function getDatasForm() {
       loadPaginationNav(dataLength, dom.paginationContentUser, 3)
 
       let pageIndex = 0;
-      fetch(`http://localhost:8080/data/modify?word=${searchWord}&alphabetic=${alphabetic}&newest=${newest}&email=${email}&page=${pageIndex}`
+      fetch(`https://spacerock.onrender.com/data/modify?word=${searchWord}&alphabetic=${alphabetic}&newest=${newest}&email=${email}&page=${pageIndex}`
       ).then(res => res.json())
         .then(data => {
           dom.savedSamplesDiv.innerHTML = render(data, formCard)
@@ -95,7 +95,7 @@ export function getDatasForm() {
           onePage.classList.add("bg-white")
 
           pageIndex = onePage.innerText - 1
-          fetch(`http://localhost:8080/data/modify?word=${searchWord}&alphabetic=${alphabetic}&newest=${newest}&email=${email}&page=${pageIndex}`
+          fetch(`https://spacerock.onrender.com/data/modify?word=${searchWord}&alphabetic=${alphabetic}&newest=${newest}&email=${email}&page=${pageIndex}`
           ).then(res => res.json())
             .then(data => {
               dom.savedSamplesDiv.innerHTML = render(data, formCard)
