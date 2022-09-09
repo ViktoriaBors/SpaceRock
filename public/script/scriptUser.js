@@ -9,7 +9,7 @@ import { removeWhiteSpaces } from "./renderDetails.js"
 
 
 //See the user has a session
-fetch(`http://localhost:8080/user`,{
+fetch(`https://spacerock.onrender.com/user`,{
     credentials: 'include'
 }).then(res => {
     if(!res.ok){
@@ -27,7 +27,7 @@ fetch(`http://localhost:8080/user`,{
         icon: "error",
     })
     setTimeout(()=>{
-        window.open("http://localhost:8080/contact", "_self")
+        window.open("https://spacerock.onrender.com/contact", "_self")
       }, 1000)
 })
 
@@ -70,7 +70,7 @@ dom.submitSample.addEventListener("click", function () {
         document.querySelector("#userEmail").innerText,
    )   
 
-   fetch(`http://localhost:8080/data`, {
+   fetch(`https://spacerock.onrender.com/data`, {
     method: 'POST',
     headers: {
         "content-type": "application/json",
@@ -123,7 +123,7 @@ dom.submitImgBtn.addEventListener("click", ()=>{
     fileForm.append("img", file)
     fileForm.append("email", email)
 
-    fetch(`http://localhost:8080/data/file`, {
+    fetch(`https://spacerock.onrender.com/data/file`, {
     method: 'POST',
     body: fileForm
     }).then(res => {
@@ -155,7 +155,7 @@ dom.submitImgBtn.addEventListener("click", ()=>{
 
 //////////  Log out //////////
 dom.logoutBtn.addEventListener("click", ()=>{
-    fetch(`http://localhost:8080/user/logout`)
+    fetch(`https://spacerock.onrender.com/user/logout`)
     .then(res => {
         if(!res.ok){
             throw new Error("error")
@@ -169,7 +169,7 @@ dom.logoutBtn.addEventListener("click", ()=>{
             icon: "success",
         })
         setTimeout(() => {
-            window.open("http://localhost:8080/index", "_self")
+            window.open("https://spacerock.onrender.com/index", "_self")
         }, 1000)
     })
 })
