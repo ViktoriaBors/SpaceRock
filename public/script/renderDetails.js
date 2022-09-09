@@ -14,7 +14,7 @@ export function readMore() {
     for (let readMore of readMoreBtn) {
         readMore.addEventListener("click", function (event) {
             let id = event.target.dataset.sampleid
-            fetch(`http://localhost:8080/data/${id}`)
+            fetch(`https://spacerock.onrender.com/data/${id}`)
                 .then(res => {
                     if (!res.ok) {
                         throw new Error("Error")
@@ -52,7 +52,7 @@ export function renderFormDetails() {
             /// Delete sample 
             if (event.target.id == "delete") {
                 let sampleid = (event.target.dataset.sampleid)
-                fetch(`http://localhost:8080/data/${sampleid}`, {
+                fetch(`https://spacerock.onrender.com/data/${sampleid}`, {
                     method: 'delete',
                 })
                     .then(res => {
@@ -110,7 +110,7 @@ export function renderFormDetails() {
                 )
 
                 let sampleid = (event.target.dataset.sampleid)
-                fetch(`http://localhost:8080/data/${sampleid}`, {
+                fetch(`https://spacerock.onrender.com/data/${sampleid}`, {
                     method: 'PUT',
                     headers: {
                         "content-type": "application/json",
