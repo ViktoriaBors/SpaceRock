@@ -20,7 +20,7 @@ To make a simple CRUD application where the user can add, modify and delete data
 
 **Challenges within the Project**
 
-This project was filled with challenges. I am not sure where I should even start. Luckily I have made some notes and posts about my struggles on my Linkedin. Later I am going to copy-paste it here too. 
+This project was filled with challenges. I am not sure where I should even start. Luckily I have made some notes and posts about my struggles on my Linkedin. I also added my blog entries here under the **BLOG.MD**. 
 
 ## **_What have I learned_**
 1. Javascript -  a lot. Front end and back end side too. 
