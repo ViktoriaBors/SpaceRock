@@ -7,7 +7,7 @@ import fs from "fs"
 import bcrypt from "bcrypt"
 import multer from "multer"
 
-const uri = process.env.MONGODB_URI || "mongodb+srv://vbp:spacerockApp1@spacerock-db.zvbvmp3.mongodb.net/spacerock?retryWrites=true&w=majority"
+const uri = "mongodb+srv://vbp:spacerockApp1@spacerock-db.zvbvmp3.mongodb.net/spacerock?retryWrites=true&w=majority" || process.env.MONGODB_URI 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 let db
 
