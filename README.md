@@ -30,3 +30,5 @@ This project was filled with challenges. I am not sure where I should even start
 ## Deployed: 2022. September.
 https://spacerock.onrender.com/index
 
+For testing purpose use test@test.com for username with the password test on the login form.
+
